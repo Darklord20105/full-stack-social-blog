@@ -176,6 +176,7 @@ router.post("/api/post/userprofiletodb", (req, res, next) => {
     const nickname = String(req.body.profile.nickname)
     const email = String(req.body.profile.email)
     const email_verfied = String(req.body.profile.email_verified)
+    console.log(nickname, email, email_verfied)
 
     pool.query(`INSERT INTO users(username, email, email_verified, date_created) VALUES('${nickname}', '${email}', '${email_verfied}', 'NOW()') ON CONFLICT DO NOTHING;`,
         (q_err, q_res) => {
