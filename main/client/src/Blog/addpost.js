@@ -36,6 +36,7 @@ class AddPost extends Component {
     }
     render() {
         console.log(this.state.body)
+        console.log(this.props.db_profile)
         return (
             <Container style={{ marginTop: "5rem" }}>
                 {this.props.db_profile !== null ?

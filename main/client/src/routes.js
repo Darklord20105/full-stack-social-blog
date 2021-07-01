@@ -75,14 +75,17 @@ class Routes extends Component {
                 path="/"
                 auth={auth}
                 component={Home}
-              // render={() => <Home auth={auth} />}
+                // render={() => <Home auth={auth} />}
               />
+
               {/* <Route exact path="/form1" component={Form1} /> */}
+
               {/* <Route
                 exact
                 path="/container1"
                 render={() => <Container1 auth={auth} />}
               /> */}
+              
               <Route
                 path="/authcheck"
                 render={() => <AuthCheck auth={auth} />}
@@ -118,6 +121,7 @@ class Routes extends Component {
               <Route
                 path="/callback"
                 render={props => {
+                  console.log(props)
                   handleAuthentication(props);
                   return <Callback />;
                 }}
