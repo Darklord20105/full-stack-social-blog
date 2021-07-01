@@ -18,9 +18,9 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.use("/", indexRouter)
 
-// app.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname + '/client/build/index.html'));
-// });
+app.get('/callback', (req, res) => {
+    res.sendFile(path.join(__dirname + '/client/build/index.html'));
+});
 
 
 module.exports = app;
