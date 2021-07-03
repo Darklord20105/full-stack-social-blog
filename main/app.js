@@ -14,13 +14,16 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'client/build')));
+app.use(express.static(path.join(__dirname, 'public')));
+// production
+// app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.use("/", indexRouter)
 
-app.get('/callback', (req, res) => {
-    res.sendFile(path.join(__dirname + '/client/build/index.html'));
-});
+// production
+// app.get('/callback', (req, res) => {
+//     res.sendFile(path.join(__dirname + '/client/build/index.html'));
+// });
 
 
 module.exports = app;
